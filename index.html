@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fun With Flickr</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<!-- Offline testing purposes -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/materialize-v0.97.8/css/materialize.css"> -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<!-- Offline testing purposes -->
+	<!-- <script type="text/javascript" src="assets/materialize-v0.97.8/js/materialize.js"></script> -->
+</head>
+<body>
+	<!-- Page title/header -->
+	<header class="container">
+		<div class="row">
+			<div class="col s12">
+				<h2 class="center-align">Flickr Photo Finder and Display</h2>
+			</div>
+		</div>
+	</header>
+	<!-- Search field for Flickr API call -->
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s10 offset-s1 l4 offset-l4">
+						<label for="search-field">Search</label></br>
+						<input placeholder="puppies" id="search-field" type="text" class="validate">
+						<button class="btn waves-effect waves-light" id="search" type="submit" name="action">Search
+							<i class="material-icons right">search</i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Displays rotating set of pictures returned from Flicker API call -->
+		<div class="row">
+			<div class="col s10 offset-s1">
+				<div class="carousel">
+					<!-- Carousel of images to be built by JavaScript after call to flickr api -->
+				</div>
+			</div>
+		</div>
+		<!-- Selected picture hero image -->
+		<div class="row">
+			<div class="col s12">
+				<div class="hero-image">
+					<!-- Large display of selected image to appear here -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer for page creator and apps used -->
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<p class="center-align">Powered by Materialize and Flickr</p>
+					<p class="center-align">Designed by Kyle Rinehart</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
