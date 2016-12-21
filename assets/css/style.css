@@ -7,3 +7,11 @@ body {
 main {
 flex: 1 0 auto;
 }
+
+.thumbnail {
+	display: inline;
+}
+
+.splashPic {
+	width: 75%
+}
