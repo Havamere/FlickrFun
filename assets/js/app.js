@@ -21,7 +21,7 @@ $(document).ready(function() {
 		// Clears Splash Image.
 		$('#splash-image').empty();
 		// Clrears Thumbnail gallery
-		$('#thumbnails').empty();
+		$('#thumb-div').empty();
 		// Clears photoArr for new set of photos
 		photoArr = [];
 		// Allows re-initialization of carousel for new searches
