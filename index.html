@@ -13,29 +13,28 @@
 	<!-- <script type="text/javascript" src="assets/materialize-v0.97.8/js/materialize.js"></script> -->
 </head>
 <body>
-	<!-- Page title/header -->
-	<header class="container">
-		<div class="row">
-			<div class="col s12">
-				<h2 class="center-align">Flickr Photo Finder and Display</h2>
+	<!-- Stays at the top of the page -->
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo center">Flickr Photo Finder and Display</a>
 			</div>
-		</div>
-	</header>
-	<!-- Search field for Flickr API call -->
-	<div class="container">
-		<div class="row">
-			<div class="col s12">
-				<div class="row">
-					<div class="input-field col s10 offset-s1 l4 offset-l4">
-						<label for="search-field">Search</label></br>
-						<input placeholder="puppies" id="search-field" type="text" class="validate">
-						<button class="btn waves-effect waves-light" id="search" type="submit" name="action">Search
-							<i class="material-icons right">search</i>
-						</button>
+		</nav>
+	</div>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<form>
+				<!-- Search field for Flickr API call -->
+					<div class="input-field">
+						<input placeholder="Type here" id="search-field" type="text" class="validate" required>
+						<button class="btn waves-effect waves-light" id="search" type="submit" name="action">Search</button>
 					</div>
-				</div>
+				</form>
 			</div>
-		</div>
+		</nav>
+	</div>
+	<div class="container">
 		<div class="row">
 			<div class="col s12">
 				<div class="container">
@@ -63,11 +62,11 @@
 		</div>
 	</div>
 	<!-- Footer for page creator and apps used -->
-	<footer class="page-footer">
+	<footer class="page-footer blue">
 		<div class="container">
 			<div class="row">
 				<div class="col s12">
-					<p class="center-align">Powered by Materialize and Flickr</p>
+					<p class="center-align">Powered by Materialize, jQuery and Flickr</p>
 					<p class="center-align">Designed by Kyle Rinehart</p>
 				</div>
 			</div>

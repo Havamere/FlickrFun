@@ -8,6 +8,14 @@ main {
 flex: 1 0 auto;
 }
 
+.nav-wrapper {
+	height: 220px;
+}
+
+#search-field {
+	width: 75%;
+}
+
 .thumbnail {
 	display: inline;
 }
