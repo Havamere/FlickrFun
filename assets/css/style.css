@@ -12,6 +12,17 @@ flex: 1 0 auto;
 	display: inline;
 }
 
+#thumb-div {
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
 .splashPic {
-	width: 75%
+	width: 75%;
+}
+
+.thumb {
+	margin: 1px;
 }

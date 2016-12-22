@@ -22,7 +22,7 @@ $(document).ready(function() {
 		$('#splash-image').empty();
 		// Clrears Thumbnail gallery
 		$('#thumbnails').empty();
-		// Clears PhotoArr for new set of photos
+		// Clears photoArr for new set of photos
 		photoArr = [];
 		// Allows re-initialization of carousel for new searches
 		if ($('#carousel').hasClass('initialized')){
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		console.log(imgRequest);
 		// Query string to assemble API call
 		var queryURL = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key="
-						+credentials.key+"&format=json&per_page=25&safe_search=1&tags="+imgRequest+"&extras=url_o,url_q,url_t,tags";
+						+credentials.key+"&format=json&per_page=25&safe_search=1&tags="+imgRequest+"&extras=url_o,url_q,url_t,url_c,tags";
 		// Call to Flickr 
 		$.ajax({
 			url: queryURL,
@@ -58,21 +58,22 @@ $(document).ready(function() {
 						// Grabs url for thumbnail
 						thumbURL: photoArr[i].url_t,
 						// Grabs url for original image
-						splashUrl: photoArr[i].url_o,
+						splashUrl: photoArr[i].url_o
+					}
+					if (photo.splashUrl == undefined) {
+						photo.splashUrl = photoArr[i].url_c;
 					}
 					// Builds carousel image div.
 					$('#carousel').append('<a class="carousel-item" href="#'+numArr[i]+'!"><img class="pic" src="'+photo.lgSqrUrl+'" data-original-url="'+photo.splashUrl+'"/></a>');
-					$("#thumbnails").append('<div class="thumbnail"><img class="pic" src="'+photo.thumbURL+'" data-original-url="'+photo.splashUrl+'"/></div>');
+					$("#thumb-div").append('<div class="thumbnail"><img class="pic thumb" src="'+photo.thumbURL+'" data-original-url="'+photo.splashUrl+'"/></div>');
 				}
 			}).then(function(){
 				// Activates the Materialize Carousel
 				$('.carousel').carousel();
 			})
 	}
-	// Runs search function each time the search button is pressed.
-	$(document).on('click','#search', photoSearch);
-	// Sets new Splash image each time a picture is clicked
-	$(document).on('click','.pic', function(){
+
+	function createSplash(){
 		// Clears Splash Image.
 		$('#splash-image').empty();
 		// Sets url for splash src
@@ -80,5 +81,16 @@ $(document).ready(function() {
 		console.log(splashSRC);
 		// Places image in Splash div. 
 		$('#splash-image').append('<img class="splashPic" src="'+splashSRC+'"/>');
+	}
+
+	// Runs search function each time the search button is pressed.
+	$(document).on('click','#search', photoSearch);
+	// Sets new Splash image each time a picture is clicked
+	$(document).on('click','.pic', createSplash);
+	// Handles using the enter key
+	$('#search-field').keypress(function(event) {
+		if (event.which == 13) {
+			photoSearch();
+		}
 	});
 })
